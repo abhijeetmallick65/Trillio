@@ -1,0 +1,127 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+
+//media queries
+$largest: 75em; //1200/16
+$large: 68.75em; //1100/16
+$medium: 56.25em; //900/16
+$small: 37.5em; //600/16
+$smallest: 31em; //500/16
+
+:root {
+  --color-Primary: #eb2f64;
+  --color-Primary-dark: #ba265d;
+  --color-Primary-light: #ff3366;
+
+  --color-Grey-light-2: #f4f2f2;
+  --color-Grey-light-1: #faf9f9;
+  --color-Grey-light-3: #f0eeee;
+  --color-Grey-light-4: #ccc;
+  --color-Grey-dark-2: #777;
+  --color-Grey-dark-1: #333;
+  --color-Grey-dark-3: #999;
+
+  --line: 1px solid var(--color-Grey-light-1);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  @media only screen and (max-width: $large) {
+    font-size: 50%; //8px/16;
+  }
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open-serif", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-Primary),
+    var(--color-Primary-dark)
+  );
+  background-size: 400%;
+  background-repeat: no-repeat;
+  color: var(--color-Grey-dark-2);
+  animation: bg 6s infinite alternate;
+  /////////
+  min-height: 100vh;
+}
+
+//background animation
+@keyframes bg {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+::selection {
+  background-color: var(--color-Primary-light);
+  color: #fff;
+}
+
+//icons
+.fa {
+  padding: 2rem;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  color: white;
+  &:hover {
+    transform: scale(1.5);
+  }
+  &-facebook {
+    background: #3b5998;
+    &:hover {
+      background-color: darken(#3b5998, 10%);
+    }
+  }
+  &-instagram {
+    background: #ff66cc;
+    &:hover {
+      background-color: darken(#ff66cc, 10%);
+    }
+  }
+  &-twitter {
+    background: #55acee;
+    &:hover {
+      background-color: darken(#55acee, 10%);
+    }
+  }
+}

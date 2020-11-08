@@ -1,0 +1,83 @@
+.container {
+  max-width: 120rem;
+  background-color: white;
+  margin: 8rem auto;
+  box-shadow: 0 2rem 6rem rgba($color: #000000, $alpha: 0.3);
+  @media only screen and (max-width: $largest) {
+    margin: 0;
+    height: 100%;
+  }
+  // overflow: hidden;
+}
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  border-bottom: var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media only screen and (max-width: $smallest) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 1rem 0;
+    height: 11rem;
+  }
+}
+.content {
+  display: flex;
+  @media only screen and (max-width: $medium) {
+    flex-direction: column;
+  }
+}
+.sidebar {
+  flex: 0 0 18%;
+  background-color: var(--color-Grey-dark-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.showcase {
+  flex: 1;
+}
+
+//Details
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  @media only screen and (max-width: $medium) {
+    padding: 3rem;
+  }
+  @media only screen and (max-width: $small) {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  border-bottom: var(--line);
+  background-image: linear-gradient(
+    to right bottom,
+    pink,
+    var(--color-Grey-light-1)
+  );
+  background-size: 200%;
+  animation: bg 3s infinite alternate;
+}
+.description {
+  margin-right: 4.5rem;
+  flex: 0 0 60%;
+  font-size: 1.4rem;
+  padding: 3rem;
+  background-color: white;
+  box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.06);
+  @media only screen and (max-width: $medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+  @media only screen and (max-width: $small) {
+    margin-right: 0;
+  }
+}
+.reviews {
+  font-size: 1.4rem;
+  flex: 1;
+  align-items: center;
+}
